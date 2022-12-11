@@ -1,25 +1,56 @@
-import "./style.less";
-
 import * as React from "react";
 import { Button } from "reactstrap";
 import FeedbackPopup from "./components/FeedBackPopup";
+import FeedBackModel from "./model/feedback.model";
 
 type ReactFeedbackPopupProps = {
-    color?: string;
+    color?: "primary" | "secondary" | "warning" | "danger" | "succeess";
+    text?: string;
+    onSubmit(data: FeedBackModel): void;
+    placeholder?: string;
+    btnOk?: string;
+    btnCancel?: string;
+    buttonText?: string;
 };
 
-const ReactFeedbackPopup = ({ color }: ReactFeedbackPopupProps) => {
+const config: Partial<ReactFeedbackPopupProps> = {
+    color: "primary",
+    text: "Send Feedback",
+    placeholder: "Please enter your message...",
+    btnOk: "Submit",
+    btnCancel: "Cancel",
+};
+
+const ReactFeedbackPopup = ({
+    color,
+    text,
+    onSubmit,
+    placeholder,
+    btnOk,
+    btnCancel,
+    buttonText,
+}: ReactFeedbackPopupProps) => {
     const [isOpen, setOpen] = React.useState(false);
     const toggle = () => {
         setOpen(!isOpen);
     };
     return (
         <>
-            <Button color={color || "primary"} onClick={toggle}>
+            <Button color={color || config.color} onClick={toggle}>
                 <i className="bi-megaphone" />
-                <span className="px-2">Geri Bildirim Gonder</span>
+                {buttonText === "" ? null : (
+                    <span className="px-2">{buttonText ?? config.text}</span>
+                )}
             </Button>
-            <FeedbackPopup isOpen={isOpen} onToggle={toggle} />
+            <FeedbackPopup
+                isOpen={isOpen}
+                onToggle={toggle}
+                title={text || config.text}
+                onSubmit={onSubmit}
+                placeholder={placeholder ?? config.placeholder}
+                btnOk={btnOk ?? config.btnOk}
+                btnCancel={btnCancel ?? config.btnCancel}
+            />
         </>
     );
 };

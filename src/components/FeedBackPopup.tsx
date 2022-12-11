@@ -1,27 +1,103 @@
 import * as React from "react";
-import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from "reactstrap";
+import {
+    Modal,
+    ModalHeader,
+    ModalBody,
+    ModalFooter,
+    Button,
+    Row,
+    Col,
+    Input,
+    FormGroup,
+} from "reactstrap";
+import FiveStarRating from "./rating/FiveStarRating";
+import FeedBackModel from "../model/feedback.model";
 
 type FeedbackPopupProps = {
     isOpen: boolean;
     onToggle(): void;
+    title: string;
+    onSubmit(st: FeedBackModel): void;
+    placeholder: string;
+    btnOk: string;
+    btnCancel: string;
 };
 
-const FeedbackPopup = ({ isOpen, onToggle }: FeedbackPopupProps) => {
+const initialState: FeedBackModel = {
+    rating: -1,
+    message: "",
+};
+
+const FeedbackPopup = ({
+    isOpen,
+    onToggle,
+    title,
+    onSubmit,
+    placeholder,
+    btnOk,
+    btnCancel,
+}: FeedbackPopupProps) => {
+    const [state, setState] = React.useState(initialState);
+
     return (
         <Modal isOpen={isOpen} toggle={onToggle}>
-            <ModalHeader toggle={onToggle}>Geri Bildirim Gonder</ModalHeader>
+            <ModalHeader toggle={onToggle}>{title}</ModalHeader>
             <ModalBody>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
+                <form>
+                    <Row>
+                        <Col sm={12}>
+                            <FormGroup>
+                                <FiveStarRating
+                                    rating={state.rating}
+                                    onRatingChange={(rating) => {
+                                        setState((prev) => ({
+                                            ...prev,
+                                            rating,
+                                        }));
+                                    }}
+                                />
+                            </FormGroup>
+                        </Col>
+                        <Col sm={12} className="p-3">
+                            <Input
+                                type="textarea"
+                                id="message"
+                                placeholder={placeholder}
+                                value={state.message}
+                                onChange={(e) => {
+                                    setState((prev) => ({
+                                        ...prev,
+                                        message: e.target.value,
+                                    }));
+                                }}
+                            />
+                        </Col>
+                    </Row>
+                </form>
             </ModalBody>
             <ModalFooter>
-                <Button color="primary">Do Something</Button>{" "}
-                <Button color="secondary">Cancel</Button>
+                <Button
+                    color="primary"
+                    onClick={() => {
+                        if (state.rating === -1) {
+                            return;
+                        }
+                        onSubmit({ ...state, rating: state.rating + 1 });
+                        onToggle();
+                        setState(initialState);
+                    }}
+                >
+                    {btnOk}
+                </Button>
+                <Button
+                    color="secondary"
+                    onClick={() => {
+                        setState(initialState);
+                        onToggle();
+                    }}
+                >
+                    {btnCancel}
+                </Button>
             </ModalFooter>
         </Modal>
     );

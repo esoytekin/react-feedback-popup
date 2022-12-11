@@ -4,7 +4,7 @@ var _ = require("lodash");
 var commonConfig = require("./webpack.common.config");
 
 var config = _.assign(commonConfig, {
-    devtool: "eval",
+    devtool: "source-map", // eval
     mode: "development",
     entry: [
         "webpack-dev-server/client?http://localhost:3000",
