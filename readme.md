@@ -15,7 +15,7 @@ Install react-feedback-popup using npm or yarn:
 Import library, and default stylesheet.
 
 ``import { ReactFeedbackPopup } from "react-feedback-popup";``   
-``import "react-feedback-popup/lib/react-feedback-popup.css"`
+``import "react-feedback-popup/lib/react-feedback-popup.css"``
 
 ## How to use:
 
