@@ -8,7 +8,8 @@ Feedback popup for react apps.
 
 ## Getting Started:
 
-Install react-feedback-popup using npm or yarn:
+Install react-feedback-popup using npm or yarn.
+
 ``npm i github:esoytekin/react-feedback-popup``
 ``yarn add github:esoytekin/react-feedback-popup``
 
