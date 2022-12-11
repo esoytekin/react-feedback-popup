@@ -1,6 +1,6 @@
 >## React Feedback Popup
 
-![alt tag](https://github.com/esoytekin/react-feedback-popup/raw/master/images/react-feedback-popup-demo.png)
+![alt tag](https://github.com/esoytekin/react-feedback-popup/raw/main/images/react-feedback-popup-demo.png)
 
 
 Feedback popup for react apps.
