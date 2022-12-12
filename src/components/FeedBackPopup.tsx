@@ -39,9 +39,26 @@ const FeedbackPopup = ({
 }: FeedbackPopupProps) => {
     const [state, setState] = React.useState(initialState);
 
+    const clearState = () => {
+        setState(initialState);
+    };
+
     return (
-        <Modal isOpen={isOpen} toggle={onToggle}>
-            <ModalHeader toggle={onToggle}>{title}</ModalHeader>
+        <Modal
+            isOpen={isOpen}
+            toggle={() => {
+                clearState();
+                onToggle();
+            }}
+        >
+            <ModalHeader
+                toggle={() => {
+                    clearState();
+                    onToggle();
+                }}
+            >
+                {title}
+            </ModalHeader>
             <ModalBody>
                 <form>
                     <Row>
