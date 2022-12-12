@@ -3,7 +3,7 @@ var webpack = require("webpack");
 
 module.exports = {
     resolve: {
-        extensions: [".ts", ".tsx", ".webpack.js", ".web.js", ".js"],
+        extensions: [".ts", ".tsx", ".webpack.js", ".web.js", ".js", ".css"],
     },
     module: {
         rules: [
@@ -25,15 +25,11 @@ module.exports = {
             },
             {
                 test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-                use: [
-                    {
-                        loader: "file-loader",
-                        options: {
-                            name: "[name].[ext]",
-                            esModule: false,
-                        },
-                    },
-                ],
+                loader: "file-loader",
+                options: {
+                    name: "[name].[ext]",
+                    outputPath: "fonts",
+                },
             },
         ],
     },

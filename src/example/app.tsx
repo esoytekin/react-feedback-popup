@@ -1,5 +1,5 @@
 import * as React from "react";
-import "../ReactFeedbackPopup.less";
+import "../style/ReactFeedbackPopup.less";
 
 import { hot } from "react-hot-loader";
 import ReactFeedbackPopup from "../ReactFeedbackPopup";

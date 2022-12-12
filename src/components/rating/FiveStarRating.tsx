@@ -9,6 +9,7 @@ const RatingStarsOuter = styled.div`
     display: flex;
     justify-content: center;
     position: relative;
+    padding-bottom: 1rem;
 `;
 
 type FiveStarRatingProps = {

@@ -1,5 +1,4 @@
 var path = require("path");
-var webpack = require("webpack");
 var _ = require("lodash");
 var commonConfig = require("./webpack.common.config");
 

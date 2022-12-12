@@ -1,3 +1,3 @@
-import "../ReactFeedbackPopup.less";
+import "../style/ReactFeedbackPopup.less";
 declare const _default: () => JSX.Element;
 export default _default;

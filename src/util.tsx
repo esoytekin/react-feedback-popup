@@ -1,9 +1,9 @@
 const classes = (fill: boolean) => [
-    `bi-emoji-angry${fill ? "-fill" : ""} text-danger`,
-    `bi-emoji-frown${fill ? "-fill" : ""} text-danger`,
-    `bi-emoji-expressionless${fill ? "-fill" : ""} text-warn`,
-    `bi-emoji-laughing${fill ? "-fill" : ""} text-info`,
-    `bi-emoji-heart-eyes${fill ? "-fill" : ""} text-success`,
+    `bi-emoji-angry${fill ? "-fill" : ""}`,
+    `bi-emoji-frown${fill ? "-fill" : ""}`,
+    `bi-emoji-expressionless${fill ? "-fill" : ""}`,
+    `bi-emoji-laughing${fill ? "-fill" : ""}`,
+    `bi-emoji-heart-eyes${fill ? "-fill" : ""}`,
 ];
 
 type StatusIndex = {

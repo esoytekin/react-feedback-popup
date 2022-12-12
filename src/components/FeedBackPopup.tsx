@@ -45,6 +45,7 @@ const FeedbackPopup = ({
 
     return (
         <Modal
+            className="react-feedback-popup modal-feedback"
             isOpen={isOpen}
             toggle={() => {
                 clearState();

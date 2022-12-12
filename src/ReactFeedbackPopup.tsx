@@ -35,7 +35,7 @@ const ReactFeedbackPopup = ({
         setOpen(!isOpen);
     };
     return (
-        <>
+        <div className="react-feedback-popup div-feedback">
             <Button color={color || config.color} onClick={toggle}>
                 <i className="bi-megaphone" />
                 {buttonText === "" ? null : (
@@ -51,7 +51,7 @@ const ReactFeedbackPopup = ({
                 btnOk={btnOk ?? config.btnOk}
                 btnCancel={btnCancel ?? config.btnCancel}
             />
-        </>
+        </div>
     );
 };
 

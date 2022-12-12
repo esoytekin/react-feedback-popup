@@ -1,0 +1,65 @@
+@import "./button.less";
+@import "./modal.less";
+@import "./text.less";
+@import "./form.less";
+@import "./font/bootstrap-icons.less";
+
+:root {
+    --bs-warning: #ffc107;
+    --bs-warning-rgb: 255, 193, 7;
+}
+
+
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+.fade {
+    transition: opacity 0.15s linear;
+}
+@media (prefers-reduced-motion: reduce) {
+    .fade {
+        transition: none;
+    }
+}
+.fade:not(.show) {
+    opacity: 0;
+}
+
+
+.react-feedback-popup.div-feedback, .react-feedback-popup.modal-feedback {
+    .px-2 {
+        padding-right: 0.5rem !important;
+        padding-left: 0.5rem !important;
+    }
+    h5, .h5 {
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        line-height: 1.2;
+    }
+
+
+    h5, .h5 {
+        font-size: 1.25rem;
+    }
+
+    .p-3 {
+        padding: 1rem !important;
+    }
+    @media (min-width: 1200px) {
+        .fs-2 {
+            font-size: 2rem !important;
+        }
+    }
+    .fs-2 {
+        font-size: calc(1.325rem + 0.9vw) !important;
+    }
+
+
+    textarea {
+        resize: vertical;
+    }
+
+
+}
+

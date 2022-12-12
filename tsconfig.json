@@ -9,10 +9,8 @@
     "sourceMap": true,
     "declaration": true,
     "outDir": "lib"
-    // "allowSyntheticDefaultImports":true
   },
   "awesomeTypescriptLoaderOptions": {
-    /* ... */
   },
   "exclude": ["node_modules", "lib"]
 }
