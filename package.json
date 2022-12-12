@@ -17,7 +17,7 @@
         "url": "https://github.com/esoytekin/react-feedback-popup"
     },
     "main": "lib/react-feedback-popup.js",
-    "types": "./lib/index.d.ts",
+    "types": "./lib/src/index.d.ts",
     "keywords": [
         "react-component",
         "react",
