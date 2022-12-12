@@ -10,7 +10,8 @@
         "dist": "webpack --config webpack.prod.config.js --progress -p",
         "component-package": "webpack --config webpack.component.config.js --progress -p && npm run less",
         "less": "lessc ./src/style/ReactFeedbackPopup.less ./lib/react-feedback-popup.css",
-        "prepublish": "npm run component-package"
+        "fonts": "webpack --config webpack.fonts.config.js --progress -p && rimraf ./lib/main.*",
+        "prepublish": "npm run component-package && npm run fonts"
     },
     "repository": {
         "type": "git",
