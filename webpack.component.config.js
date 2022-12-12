@@ -4,7 +4,11 @@ var commonConfig = require("./webpack.common.config");
 
 var config = _.assign(commonConfig, {
     devtool: "source-map",
-    entry: ["./src/index.tsx"],
+    entry: [
+        "./src/index.tsx",
+        "./src/style/font/fonts/bootstrap-icons.woff",
+        "./src/style/font/fonts/bootstrap-icons.woff2",
+    ],
 
     externals: {
         react: {

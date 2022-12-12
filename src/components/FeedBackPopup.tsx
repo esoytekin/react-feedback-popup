@@ -60,7 +60,7 @@ const FeedbackPopup = ({
             >
                 {title}
             </ModalHeader>
-            <ModalBody>
+            <ModalBody className="p-3">
                 <form>
                     <Row>
                         <Col sm={12}>

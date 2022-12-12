@@ -1,6 +1,6 @@
 import FeedBackModel from "./model/feedback.model";
 declare type ReactFeedbackPopupProps = {
-    color?: "primary" | "secondary" | "warning" | "danger" | "succeess";
+    color?: "primary" | "secondary" | "warning" | "danger" | "success";
     text?: string;
     onSubmit(data: FeedBackModel): void;
     placeholder?: string;

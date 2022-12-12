@@ -12,6 +12,11 @@ const App = () => {
     return (
         <div className="d-flex justify-content-center p-5">
             <ReactFeedbackPopup onSubmit={onSubmit} />
+            <ReactFeedbackPopup onSubmit={onSubmit} color="danger" />
+            <ReactFeedbackPopup onSubmit={onSubmit} color="primary" />
+            <ReactFeedbackPopup onSubmit={onSubmit} color="warning" />
+            <ReactFeedbackPopup onSubmit={onSubmit} color="success" />
+            <ReactFeedbackPopup onSubmit={onSubmit} color="secondary" />
         </div>
     );
 };

@@ -29,6 +29,7 @@ module.exports = {
                 options: {
                     name: "[name].[ext]",
                     outputPath: "fonts",
+                    esModule: false,
                 },
             },
         ],
